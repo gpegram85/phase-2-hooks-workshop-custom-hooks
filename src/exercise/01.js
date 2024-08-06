@@ -3,14 +3,15 @@ import { useEffect } from "react";
 /* ✅ create a new function called useDocumentTitle */
 /* 👀 export function useDocumentTitle() {} */
 
-export default function Home() {
-  /* 
-    ✅ move the useEffect code into your useDocumentTitle function
-   then, call the useDocumentTitle hook in your component
-  */
+export function useDocumentTitle(title) {
   useEffect(() => {
-    document.title = "Welcome to the home page!";
+    document.title = title;
   }, []);
+}
+
+export default function Home() {
+
+  useDocumentTitle("Welcome to the home page!")
 
   return (
     <div>
